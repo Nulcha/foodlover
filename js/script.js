@@ -52,3 +52,50 @@ setInterval(function(){
         document.querySelector(".modalll").style.display = "none";
         document.body.style.overflow = 'visible';
     }
+
+    // start offer-items
+    const offer = [
+        {
+            image: "./img/offer1.png",
+            title: "Quattro Pasta",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, quibusdam.",
+            oldPrice: "$ 55.00",
+            price: "$ 18.00"
+        },
+        {
+            image: "./img/offer2.png",
+            title: "Quattro Pasta",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, quibusdam.",
+            oldPrice: "$ 55.00",
+            price: "$ 18.00"
+        },
+        {
+            image: "./img/offer3.png",
+            title: "Quattro Pasta",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, quibusdam.",
+            oldPrice: "$ 55.00",
+            price: "$ 18.00"
+        },
+    ];
+    
+    const offeritems = document.querySelector('.offers-items');
+    offeritems.innerHTML = ""; 
+    offer.forEach((item) => {
+        const menuItem  = document.createElement("div");
+        menuItem.className = "menu-item"; 
+      
+        menuItem.innerHTML = `
+          <img src="${item.image}" alt="${item.title}" class="menu-image" />
+          <h3 class="menu-title">${item.title}</h3>
+          <p class="menu-description">${item.description}</p>
+          <div class="menu-price">
+            <del >${item.oldPrice}</del> 
+            <span class="primary-text">${item.price}</span> 
+          </div>
+        `;
+        offeritems.appendChild(menuItem); 
+    });
+    const dels = document.getElementsByTagName('del');
+    for (let i = 0; i < dels.length; i++) {
+        dels[i].style.color = "white";
+    }
