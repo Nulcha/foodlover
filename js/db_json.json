@@ -1,0 +1,56 @@
+{
+    "menuItems": [
+      {
+        "src": "./img/food1.png",
+        "alt": "LASAL Cheese",
+        "title": "LASAL CHEESE",
+        "price": 18.0,
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo."
+      },
+      {
+        "src": "./img/food2.png",
+        "alt": "JUMBO CRAB SHRIMP",
+        "title": "JUMBO CRAB SHRIMP",
+        "price": 24.0,
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo."
+      }
+    ],
+    "menuContainer": ".menu-items",
+    "createMenuSection": {
+      "function": "create a section element with menu items",
+      "params": ["items"],
+      "returns": {
+        "type": "div",
+        "class": "menu-items-left",
+        "items": [
+          {
+            "type": "div",
+            "class": "menu-item",
+            "innerHTML": {
+              "img": {
+                "src": "item.src",
+                "alt": "item.alt"
+              },
+              "div": {
+                "h3": {
+                  "title": "item.title",
+                  "price": "item.price.toFixed(2)"
+                },
+                "p": "item.desc"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "leftItems": "menuItems.slice(0, 6)",
+    "rightItems": "menuItems.slice(6)",
+    "leftSection": "createMenuSection(leftItems)",
+    "rightSection": "createMenuSection(rightItems)",
+    "rightSectionClassChange": {
+      "old": "menu-items-left",
+      "new": "menu-items-right"
+    },
+    "appendSectionsToMenuContainer": ["leftSection", "rightSection"]
+  }
+  
